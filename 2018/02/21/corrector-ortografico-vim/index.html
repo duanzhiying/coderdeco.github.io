@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang=es>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon-192x192.png">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Corrector ortográfico en Vim</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+</head>
+
+<body>
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/"><i class="fa fa-home aria-hidden="true"></i></a></li>
+         
+          <li><a href="/contact/"><i class="fa fa-user aria-hidden="true"></i></a></li>
+         
+          <li><a href="/archives/"><i class="fa fa-archive aria-hidden="true"></i></a></li>
+         
+          <li><a href="/search/"><i class="fa fa-search aria-hidden="true"></i></a></li>
+         
+          <li><a href="/atom.xml"><i class="fa fa-rss aria-hidden="true"></i></a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2017/12/31/python-raiz-cuadrada/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Anterior post</span>
+      <span id="i-next" class="info" style="display:none;">Siguiente post</span>
+      <span id="i-top" class="info" style="display:none;">Volver arriba</span>
+      <span id="i-share" class="info" style="display:none;">Compartir post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://coderdeco.github.io/2018/02/21/corrector-ortografico-vim/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://coderdeco.github.io/2018/02/21/corrector-ortografico-vim/&text=Corrector ortográfico en Vim"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://coderdeco.github.io/2018/02/21/corrector-ortografico-vim/&title=Corrector ortográfico en Vim"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://coderdeco.github.io/2018/02/21/corrector-ortografico-vim/&title=Corrector ortográfico en Vim"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index width mx-auto px2 my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Corrector ortográfico en Vim
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">coderdeco</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2018-02-21T17:10:07.000Z" itemprop="datePublished">2018-02-21</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/vim/">vim</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>Vim nos permite detectar errores ortográficos de una manera muy sencilla, para  activar la corrección automática ejecuta: <code>:set spell</code> (El idioma por defecto es el Inglés).</p>
+<p>Podemos elegir otro idioma ejecutando: <code>:set spell spelllang=es</code>, este comando activaría la corrección en el idioma Español (El parámetro <strong>es</strong> indica que la corrección que deseamos es al idioma Español).</p>
+<p>Vim no viene con soporte para otros idiomas aparte del Inglés, por lo que sera necesario añadir un diccionario en Español, para eso seguimos los siguientes pasos:</p>
+<ol>
+<li><p>Buscamos un diccionario para el idioma que se requiera, en este caso el Español, vamos a descargarlo de <strong>extensions.libreoffice.org</strong> <a href="https://extensions.libreoffice.org/extensions/spanish-dictionaries/2.1/@@download/file/es_any.oxt" target="_blank" rel="noopener">Descargar</a></p>
+</li>
+<li><p>Se ha descargado el siguiente archivo <code>es_any.oxt</code>, es necesario descomprimirlo:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ unzip ./es_any.oxt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Ahora debemos crear el archivo <code>es.utf-8.spl</code>, para esto ejecuta dentro de  Vim: <code>:mkspell es es_ANY</code> (Inicia Vim dentro del mismo directorio donde se descomprimió el archivo <strong>es_any.oxt</strong>)</p>
+</li>
+<li><p>Se ha generado un nuevo archivo <code>es.utf-8.spl</code>, muevelo al directorio <code>~/.vim/spell/</code> ó <code>/usr/share/vim/vim80/spell/</code> (Esta ultima ruta puede variar dependiendo de tu versión de Vim)</p>
+</li>
+<li><p>Iniciamos Vim y probamos el corrector, para esto escribimos cualquier palabra -Con error ortográfico- y ejecutamos: <code>set spell spelllang=es</code>. A continuación deberá marcar un error en las palabras mal escritas.</p>
+</li>
+</ol>
+<p>Para mas información ejecuta en Vim: <code>:h spell</code></p>
+
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">home</a></li>
+         
+          <li><a href="/contact/">user</a></li>
+         
+          <li><a href="/archives/">archive</a></li>
+         
+          <li><a href="/search/">search</a></li>
+         
+          <li><a href="/atom.xml">rss</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://coderdeco.github.io/2018/02/21/corrector-ortografico-vim/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://coderdeco.github.io/2018/02/21/corrector-ortografico-vim/&text=Corrector ortográfico en Vim"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://coderdeco.github.io/2018/02/21/corrector-ortografico-vim/&title=Corrector ortográfico en Vim"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://coderdeco.github.io/2018/02/21/corrector-ortografico-vim/&title=Corrector ortográfico en Vim"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 coderdeco
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        
+            <li><a href="/"><i class="fa fa-home aria-hidden="true"></i></a></li>
+        
+            <li><a href="/contact/"><i class="fa fa-user aria-hidden="true"></i></a></li>
+        
+            <li><a href="/archives/"><i class="fa fa-archive aria-hidden="true"></i></a></li>
+        
+            <li><a href="/search/"><i class="fa fa-search aria-hidden="true"></i></a></li>
+        
+            <li><a href="/atom.xml"><i class="fa fa-rss aria-hidden="true"></i></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+
+<!-- baffle -->
+<script src="/lib/baffle/baffle.js"></script>
+<script>
+        let b = baffle('.decrypt', {
+                characters: 'abcdef0123456789',
+            speed: 80
+        }).start();
+        b.reveal(1000, 400);
+</script>
+
+<!-- search -->
+
+
+<!-- Google Analytics -->
+
+
+<!-- Disqus Comments -->
+
+

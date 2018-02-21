@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://coderdeco.github.io/"/>
-  <updated>2018-02-20T06:02:16.249Z</updated>
+  <updated>2018-02-21T17:58:05.704Z</updated>
   <id>https://coderdeco.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Corrector ortográfico en Vim</title>
+    <link href="https://coderdeco.github.io/2018/02/21/corrector-ortografico-vim/"/>
+    <id>https://coderdeco.github.io/2018/02/21/corrector-ortografico-vim/</id>
+    <published>2018-02-21T17:10:07.000Z</published>
+    <updated>2018-02-21T17:58:05.704Z</updated>
+    
+    <content type="html"><![CDATA[<p>Vim nos permite detectar errores ortográficos de una manera muy sencilla, para  activar la corrección automática ejecuta: <code>:set spell</code> (El idioma por defecto es el Inglés).</p><p>Podemos elegir otro idioma ejecutando: <code>:set spell spelllang=es</code>, este comando activaría la corrección en el idioma Español (El parámetro <strong>es</strong> indica que la corrección que deseamos es al idioma Español).</p><p>Vim no viene con soporte para otros idiomas aparte del Inglés, por lo que sera necesario añadir un diccionario en Español, para eso seguimos los siguientes pasos:</p><ol><li><p>Buscamos un diccionario para el idioma que se requiera, en este caso el Español, vamos a descargarlo de <strong>extensions.libreoffice.org</strong> <a href="https://extensions.libreoffice.org/extensions/spanish-dictionaries/2.1/@@download/file/es_any.oxt" target="_blank" rel="noopener">Descargar</a></p></li><li><p>Se ha descargado el siguiente archivo <code>es_any.oxt</code>, es necesario descomprimirlo:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ unzip ./es_any.oxt</span><br></pre></td></tr></table></figure></li><li><p>Ahora debemos crear el archivo <code>es.utf-8.spl</code>, para esto ejecuta dentro de  Vim: <code>:mkspell es es_ANY</code> (Inicia Vim dentro del mismo directorio donde se descomprimió el archivo <strong>es_any.oxt</strong>)</p></li><li><p>Se ha generado un nuevo archivo <code>es.utf-8.spl</code>, muevelo al directorio <code>~/.vim/spell/</code> ó <code>/usr/share/vim/vim80/spell/</code> (Esta ultima ruta puede variar dependiendo de tu versión de Vim)</p></li><li><p>Iniciamos Vim y probamos el corrector, para esto escribimos cualquier palabra -Con error ortográfico- y ejecutamos: <code>set spell spelllang=es</code>. A continuación deberá marcar un error en las palabras mal escritas.</p></li></ol><p>Para mas información ejecuta en Vim: <code>:h spell</code></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Vim nos permite detectar errores ortográficos de una manera muy sencilla, para  activar la corrección automática ejecuta: &lt;code&gt;:set spel
+      
+    
+    </summary>
+    
+    
+      <category term="vim" scheme="https://coderdeco.github.io/tags/vim/"/>
+    
+  </entry>
   
   <entry>
     <title>Calcular Raíz Cuadrada en Python</title>
