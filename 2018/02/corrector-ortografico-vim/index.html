@@ -45,8 +45,6 @@
          
           <li><a href="/"><i class="fa fa-home aria-hidden="true"></i></a></li>
          
-          <li><a href="/contact/"><i class="fa fa-user aria-hidden="true"></i></a></li>
-         
           <li><a href="/archives/"><i class="fa fa-archive aria-hidden="true"></i></a></li>
          
           <li><a href="/search/"><i class="fa fa-search aria-hidden="true"></i></a></li>
@@ -59,8 +57,6 @@
     <span id="actions">
       <ul>
         
-        
-        <li><a class="icon" href="/2017/12/python-raiz-cuadrada/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -120,11 +116,11 @@
   
 
   <div class="content" itemprop="articleBody">
-    <p>Vim nos permite detectar errores ortográficos de una manera muy sencilla, para  activar la corrección automática ejecuta: <code>:set spell</code> (El idioma por defecto es el Inglés).</p>
-<p>Podemos elegir otro idioma ejecutando: <code>:set spell spelllang=es</code>, este comando activaría la corrección en el idioma Español (El parámetro <strong>es</strong> indica que la corrección que deseamos es al idioma Español).</p>
+    <p>Vim nos permite detectar errores ortográficos de una manera muy sencilla, solo debemos activar la corrección automática. Ejecuta dentro de Vim: <code>:set spell</code> (Es necesario agregar un diccionario con el idioma que se desea corregir, por defecto se agrega el Ingles).</p>
+<p>Podemos configurar la corrección para otro idioma. Ejecuta: <code>:set spell spelllang=es</code>, este comando activaría la corrección para el idioma Español (El parámetro <strong>es</strong> indica que la corrección que deseamos es al idioma Español).</p>
 <p>Vim no viene con soporte para otros idiomas aparte del Inglés, por lo que sera necesario añadir un diccionario en Español, para eso seguimos los siguientes pasos:</p>
 <ol>
-<li><p>Buscamos un diccionario para el idioma que se requiera, en este caso el Español, vamos a descargarlo de <strong>extensions.libreoffice.org</strong> <a href="https://extensions.libreoffice.org/extensions/spanish-dictionaries/2.1/@@download/file/es_any.oxt" target="_blank" rel="noopener">Descargar</a></p>
+<li><p>Buscamos un diccionario para el idioma que se requiera, en este caso el Español. Vamos a descargarlo de <strong>extensions.libreoffice.org</strong> <a href="https://extensions.libreoffice.org/extensions/spanish-dictionaries/2.1/@@download/file/es_any.oxt" target="_blank" rel="noopener">Descargar</a></p>
 </li>
 <li><p>Se ha descargado el siguiente archivo <code>es_any.oxt</code>, es necesario descomprimirlo:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ unzip ./es_any.oxt</span><br></pre></td></tr></table></figure>
@@ -153,8 +149,6 @@
          
           <li><a href="/">home</a></li>
          
-          <li><a href="/contact/">user</a></li>
-         
           <li><a href="/archives/">archive</a></li>
          
           <li><a href="/search/">search</a></li>
@@ -180,10 +174,10 @@
 
     <div id="actions-footer">
       <ul>
-        <li id="toc"><a class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
-        <li id="share"><a class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
-        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
-        <li id="menu"><a class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+        <li id="toc"><a class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa fa-list fa-lg" aria-hidden="true"></i> </a></li>
+        <li id="share"><a class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> </a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> </a></li>
+        <li id="menu"><a class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa fa-bars fa-lg" aria-hidden="true"></i> </a></li>
       </ul>
     </div>
 
@@ -200,8 +194,6 @@
       <ul>
         
             <li><a href="/"><i class="fa fa-home aria-hidden="true"></i></a></li>
-        
-            <li><a href="/contact/"><i class="fa fa-user aria-hidden="true"></i></a></li>
         
             <li><a href="/archives/"><i class="fa fa-archive aria-hidden="true"></i></a></li>
         
